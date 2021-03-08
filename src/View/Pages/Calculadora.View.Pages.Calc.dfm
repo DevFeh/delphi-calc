@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Calculadora Delphi'
-  ClientHeight = 531
-  ClientWidth = 300
+  ClientHeight = 625
+  ClientWidth = 281
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,20 +12,22 @@ object Form2: TForm2
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 300
-    Height = 531
+    Width = 281
+    Height = 625
     Align = alClient
     TabOrder = 0
     object lbl1: TLabel
       Left = 1
       Top = 1
-      Width = 298
+      Width = 279
       Height = 28
       Align = alTop
       Alignment = taRightJustify
@@ -37,13 +39,13 @@ object Form2: TForm2
       Font.Style = []
       ParentColor = False
       ParentFont = False
-      ExplicitLeft = 293
+      ExplicitLeft = 274
       ExplicitWidth = 6
     end
     object lbl2: TLabel
       Left = 1
       Top = 29
-      Width = 298
+      Width = 279
       Height = 40
       Align = alTop
       Alignment = taRightJustify
@@ -55,13 +57,13 @@ object Form2: TForm2
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
-      ExplicitLeft = 291
+      ExplicitLeft = 272
       ExplicitWidth = 8
     end
     object Panel2: TPanel
       Left = 1
-      Top = 171
-      Width = 298
+      Top = 265
+      Width = 279
       Height = 359
       Align = alBottom
       BevelOuter = bvNone
@@ -75,11 +77,11 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 0
       DesignSize = (
-        298
+        279
         359)
       object btnIgual: TSpeedButton
         AlignWithMargins = True
-        Left = 228
+        Left = 211
         Top = 291
         Width = 65
         Height = 65
@@ -92,10 +94,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 228
       end
       object Button1: TSpeedButton
         AlignWithMargins = True
-        Left = 157
+        Left = 145
         Top = 291
         Width = 65
         Height = 65
@@ -108,10 +111,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 157
       end
       object Button2: TSpeedButton
         AlignWithMargins = True
-        Left = 86
+        Left = 78
         Top = 291
         Width = 65
         Height = 65
@@ -124,10 +128,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 86
       end
       object Button3: TSpeedButton
         AlignWithMargins = True
-        Left = 15
+        Left = 12
         Top = 291
         Width = 65
         Height = 65
@@ -140,10 +145,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 15
       end
       object btnSoma: TSpeedButton
         AlignWithMargins = True
-        Left = 228
+        Left = 211
         Top = 220
         Width = 65
         Height = 65
@@ -156,10 +162,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 228
       end
       object btnSubtrai: TSpeedButton
         AlignWithMargins = True
-        Left = 228
+        Left = 211
         Top = 149
         Width = 65
         Height = 65
@@ -172,10 +179,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 228
       end
       object btnMultiplica: TSpeedButton
         AlignWithMargins = True
-        Left = 228
+        Left = 211
         Top = 78
         Width = 65
         Height = 65
@@ -190,10 +198,11 @@ object Form2: TForm2
         ParentFont = False
         ParentShowHint = False
         ShowHint = False
+        ExplicitLeft = 228
       end
       object Button8: TSpeedButton
         AlignWithMargins = True
-        Left = 15
+        Left = 12
         Top = 220
         Width = 65
         Height = 65
@@ -206,10 +215,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 15
       end
       object Button9: TSpeedButton
         AlignWithMargins = True
-        Left = 86
+        Left = 78
         Top = 220
         Width = 65
         Height = 65
@@ -222,10 +232,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 86
       end
       object Button10: TSpeedButton
         AlignWithMargins = True
-        Left = 157
+        Left = 145
         Top = 220
         Width = 65
         Height = 65
@@ -238,10 +249,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 157
       end
       object Button11: TSpeedButton
         AlignWithMargins = True
-        Left = 15
+        Left = 12
         Top = 149
         Width = 65
         Height = 65
@@ -254,10 +266,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 15
       end
       object Button12: TSpeedButton
         AlignWithMargins = True
-        Left = 86
+        Left = 78
         Top = 149
         Width = 65
         Height = 65
@@ -270,10 +283,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 86
       end
       object Button13: TSpeedButton
         AlignWithMargins = True
-        Left = 157
+        Left = 145
         Top = 149
         Width = 65
         Height = 65
@@ -286,10 +300,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 157
       end
       object Button14: TSpeedButton
         AlignWithMargins = True
-        Left = 15
+        Left = 12
         Top = 78
         Width = 65
         Height = 65
@@ -302,10 +317,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 15
       end
       object Button15: TSpeedButton
         AlignWithMargins = True
-        Left = 86
+        Left = 78
         Top = 78
         Width = 65
         Height = 65
@@ -318,10 +334,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 86
       end
       object Button16: TSpeedButton
         AlignWithMargins = True
-        Left = 157
+        Left = 145
         Top = 78
         Width = 65
         Height = 65
@@ -334,10 +351,11 @@ object Form2: TForm2
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 157
       end
       object btnLimpaTudo: TSpeedButton
         AlignWithMargins = True
-        Left = 15
+        Left = 12
         Top = 7
         Width = 65
         Height = 65
@@ -350,10 +368,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 15
       end
       object btnApaga: TSpeedButton
         AlignWithMargins = True
-        Left = 157
+        Left = 145
         Top = 7
         Width = 65
         Height = 65
@@ -366,10 +385,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 157
       end
       object btnLimpa: TSpeedButton
         AlignWithMargins = True
-        Left = 86
+        Left = 78
         Top = 7
         Width = 65
         Height = 65
@@ -382,10 +402,11 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 86
       end
       object btnDivisao: TSpeedButton
         AlignWithMargins = True
-        Left = 228
+        Left = 211
         Top = 8
         Width = 65
         Height = 65
@@ -398,7 +419,19 @@ object Form2: TForm2
         Font.Name = 'Microsoft YaHei Light'
         Font.Style = []
         ParentFont = False
+        ExplicitLeft = 228
       end
+    end
+    object Memo1: TMemo
+      Left = 1
+      Top = 69
+      Width = 279
+      Height = 196
+      Align = alClient
+      Lines.Strings = (
+        'LOG:')
+      ReadOnly = True
+      TabOrder = 1
     end
   end
 end

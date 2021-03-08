@@ -7,13 +7,17 @@ uses
   Winapi.Messages,
   System.Variants,
   System.Classes,
+  System.Actions,
+  System.StrUtils,
   Vcl.Graphics,
   Vcl.Controls,
   Vcl.Forms,
   Vcl.Dialogs,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  Vcl.Buttons, System.Actions, Vcl.ActnList;
+  Vcl.Buttons,
+  Vcl.ActnList,
+  Calculador.Services.Interfaces;
 
 type
   TForm2 = class(TForm)
@@ -45,23 +49,14 @@ type
     Button14: TSpeedButton;
     Button15: TSpeedButton;
     Button16: TSpeedButton;
-    
-
+    Memo1: TMemo;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
-
+    procedure FormCreate(Sender: TObject);
   private
-    // Soma
-    function somar(Value1, Value2 : Integer) : Integer;
-
-    // Subtração
-    function subtrair(Value1, Value2 : Integer) : Integer;
-
-    // Mutiplicação
-    function multiplicar(Value1, Value2 : Integer) : Integer;
-
-    // Dividir
-    function dividir(Value1, Value2 : Integer) : Integer;
+    FCalculadora: iCalculadora;
   public
+    procedure MostraResultado(Value: Integer);
+    procedure AddLog(ALog: String);
     { Public declarations }
   end;
 
@@ -75,46 +70,40 @@ uses
 
 {$R *.dfm}
 
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  FCalculadora := TCalculadora.
+    New.
+    Display(MostraResultado).
+    Log(AddLog);
+end;
+
 procedure TForm2.FormKeyPress(Sender: TObject; var Key: Char);
 var
-  x : String;
-
-  IntValue1 : Integer;
-  IntValue2 : Integer;
-
-  CurrValue1 : Currency;
-  CurrValue2 : Currency;
-
+  ATexto: string;
 begin
-
+  // SOMA
   if Key = #43 then
   begin
-    try
-      tryStrToInt(lbl1.Caption, IntValue1);
-    except
-      IntValue1 := 0;
-    end;
-
-    IntValue2 := StrToInt(lbl2.Caption);
-
-    try
-      somar(IntValue1, IntValue2);
-    except
-      lbl2.Caption := '0';
-    end;
-
+    FCalculadora.Somar;
     lbl1.Caption := lbl2.Caption + ' + ';
   end;
+
+  // SUBTRACAO
   if Key = #45 then
   begin
     lbl1.Caption := lbl2.Caption + ' - ';
     lbl2.Caption := '';
   end;
+
+  // MULTIPLICACAO
   if Key = #42 then
   begin
     lbl1.Caption := lbl2.Caption + ' × ';
     lbl2.Caption := '';
   end;
+
+  // DIVISAO
   if Key = #47 then
   begin
     lbl1.Caption := lbl2.Caption + ' ÷ ';
@@ -122,68 +111,82 @@ begin
   end;
 
   if Key = #48 then
+  begin
     lbl2.Caption := lbl2.Caption + '0';
+    FCalculadora.Adicionar(0);
+  end;
   if Key = #49 then
+  begin
     lbl2.Caption := lbl2.Caption + '1';
+    FCalculadora.Adicionar(1);
+  end;
   if Key = #50 then
+  begin
     lbl2.Caption := lbl2.Caption + '2';
+    FCalculadora.Adicionar(2);
+  end;
   if Key = #51 then
+  begin
     lbl2.Caption := lbl2.Caption + '3';
+    FCalculadora.Adicionar(3);
+  end;
   if Key = #52 then
+  begin
     lbl2.Caption := lbl2.Caption + '4';
+    FCalculadora.Adicionar(4);
+  end;
   if Key = #53 then
+  begin
     lbl2.Caption := lbl2.Caption + '5';
+    FCalculadora.Adicionar(5);
+  end;
   if Key = #54 then
+  begin
     lbl2.Caption := lbl2.Caption + '6';
+    FCalculadora.Adicionar(6);
+  end;
   if Key = #55 then
+  begin
     lbl2.Caption := lbl2.Caption + '7';
+    FCalculadora.Adicionar(7);
+  end;
   if Key = #56 then
+  begin
     lbl2.Caption := lbl2.Caption + '8';
+    FCalculadora.Adicionar(8);
+  end;
   if Key = #57 then
+  begin
     lbl2.Caption := lbl2.Caption + '9';
+    FCalculadora.Adicionar(9);
+  end;
 
+    //
   if Key = #13 then
     lbl2.Caption := lbl2.Caption;
 
+  // APAGAR
   if Key = #8 then
   begin
-    x := lbl2.Caption;
-    Delete(x, length(x), 1);
-    lbl2.Caption := x;
+    ATexto := lbl2.Caption;
+    Delete(ATexto, length(ATexto), 1);
+    lbl2.Caption := ATexto;
   end;
 
 end;
 
-function TForm2.somar(Value1, Value2: Integer): Integer;
-var
-  Resultado : Integer;
+procedure TForm2.MostraResultado(Value: Integer);
 begin
-  Resultado := Value1 + Value2;
-  lbl2.Caption := IntToStr(Resultado);
+  lbl2.Caption := IntToStr(Value);
 end;
 
-function TForm2.subtrair(Value1, Value2: Integer): Integer;
-var
-  Resultado : Integer;
+procedure TForm2.AddLog(ALog: String);
 begin
-  Resultado := Value1 - Value2;
-  lbl1.Caption := IntToStr(Resultado);
+  Memo1.Lines.Add(ALog);
 end;
 
-function TForm2.dividir(Value1, Value2: Integer): Integer;
-var
-  Resultado : Integer;
-begin
-  Resultado := Value1 div Value2;
-  lbl1.Caption := IntToStr(Resultado);
-end;
 
-function TForm2.multiplicar(Value1, Value2: Integer): Integer;
-var
-  Resultado : Integer;
-begin
-  Resultado := Value1 * Value2;
-  lbl1.Caption := IntToStr(Resultado);
-end;
+
+
 
 end.
