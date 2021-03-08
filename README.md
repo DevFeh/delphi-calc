@@ -2,6 +2,6 @@
   Delphi Calc
 </h1>
 
-<p aling="center">
+<p align="center">
   Uma simples calculadora em delphi.
 </p>
